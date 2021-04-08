@@ -1,0 +1,544 @@
+@charset "UTF-8";
+/* Variaveis referente ao HEADER and FOOTER */
+/* Variaveis refetrente ao fundo das navs */
+/* formatacao content */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Vollkorn", Georfia, serif;
+}
+
+/* tirando a bolinha dos itens de lista */
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* configurando todo o sistema de grid do site */
+.estrutura {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(160px, 1fr) 3fr 300px;
+      grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+      grid-template-areas: "header header header" "sidnev content anuncios" "footer footer footer";
+}
+
+/*configuracoes do menu */
+.header {
+  z-index: 9999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  /* craiando um gradiente no menu */
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  padding: 30px;
+  /* criando o Grid interno do menu */
+  display: -ms-grid;
+  display: grid;
+  /* definindo a quantidade de colunas do meu menu e tamanho */
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  /*  fim do Grid interno do menu */
+}
+
+.header .logo {
+  max-width: 200px;
+}
+
+.header nav {
+  /* so ira adicionar a margin quando tiver um li apos o outro */
+}
+
+.header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 10px;
+  color: white;
+  font-size: 1.125em;
+  background: #8844ee58;
+  border-radius: 5px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.header nav a:hover {
+  background: #8844ee8e;
+}
+
+.header nav li + li {
+  margin-left: 30px;
+}
+
+.header nav li:nth-child(4) {
+  display: none;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+/* fim das configuracoes menu */
+/* inicio das configuracoes da sidnav */
+.sidenav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sidnev;
+  background: #e4d5fa25;
+  padding: 30px;
+}
+
+.sidenav ul li a {
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
+          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
+  -webkit-transition: .1s ease-out;
+  transition: .1s ease-out;
+}
+
+.sidenav ul li a:hover {
+  background-color: #B07DFB;
+}
+
+/* fim das configuracoes da sidnav */
+/* Inicio das configuracoes da content */
+.content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  /* define que o item no grid vai ser com todas as colunas */
+  /* inicio stylos */
+  /* titulo */
+  /* caracteristicas */
+  /* testos em destaque */
+  /*   fim stylos  */
+}
+
+.content .col-wide {
+  grid-column: 1 / -1;
+}
+
+.content img {
+  width: 100%;
+}
+
+.content .img-1 {
+  grid-row: span 2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.content .img-2 {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.content p {
+  font-size: 1.2em;
+  font-weight: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.content .informacoes p + p {
+  margin-top: 30px;
+}
+
+.content .titulo {
+  color: #B07DFB;
+}
+
+.content .titulo h1 {
+  font-size: 3.75em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.content .titulo span {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+.content .caracteristicas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.content .caracteristicas span {
+  display: block;
+  color: #B07DFB;
+}
+
+.content .caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  border-radius: 6px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
+          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
+  position: relative;
+}
+
+.content .caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+
+.content .caracteristicas .numero {
+  font-size: 3em;
+  line-height: 1;
+  margin-top: 10px auto;
+}
+
+.content .caracteristicas .rotulo {
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+
+.content .citacao, .content .atributos {
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.content .citacao p {
+  font-size: 1.3em;
+  font-style: italic;
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.content .atributos li {
+  color: white;
+  font-family: Courier, monospace;
+  font-size: 1em;
+  padding: 15px;
+}
+
+.content .atributos li + li {
+  border-top: 2px solid #B07DFB;
+}
+
+.content .destaque {
+  font-size: 0.875em;
+  color: #B07DFB;
+  max-width: 16em;
+}
+
+/* fim das configuracoes da content */
+/* Inicio das configuracoes da anuncios */
+.anuncios {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: anuncios;
+  background: #e4d5fa25;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  padding: 30px;
+  /* distancia entre os itens sem a margim */
+  gap: 30px;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+/* fim das configuracoes da anuncios */
+/* Inicio das configuracoes da footer */
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+
+.footer p {
+  font-size: 1.125em;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* fim das configuracoes da footer */
+.side-menu-wrapper {
+  /* style menu wrapper */
+  background: rgba(116, 24, 221, 0.942);
+  padding: 40px 0 0 40px;
+  position: fixed;
+  /* Fixed position */
+  top: 0;
+  right: 0;
+  /* Sidebar initial position. "right" for right positioned menu */
+  height: 100%;
+  z-index: 2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* CSS transition speed */
+  width: 250px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.side-menu-wrapper > ul {
+  /* css ul list style */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  /* enable scroll for menu items */
+  height: 95%;
+}
+
+.side-menu-wrapper > ul > li > a {
+  /* links */
+  display: block;
+  border-bottom: 1px solid white;
+  padding: 6px 4px 6px 4px;
+  color: #000000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.side-menu-wrapper > a.menu-close {
+  /* close button */
+  padding: 8px 0 4px 23px;
+  color: black;
+  display: block;
+  margin: -30px 0 -10px -20px;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.menu-overlay {
+  /* overlay */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.hamburger {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.hamburger::after {
+  content: "";
+  width: 70%;
+  height: 3px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.hamburger::before {
+  content: "";
+  width: 70%;
+  height: 3px;
+  border-radius: 20px;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+  background-color: aliceblue;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+#hamburger:checked ~ label .hamburger::after, #hamburger1:checked ~ label .hamburger::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 45%;
+}
+
+#hamburger:checked ~ label .hamburger::before, #hamburger1:checked ~ label .hamburger::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 45%;
+}
+
+#hamburger:checked ~ label .hamburger, #hamburger1:checked ~ label .hamburger {
+  top: 45%;
+}
+
+@-webkit-keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* mudando o layout do conteudo para ficar responsivo */
+  .estrutura {
+        grid-template-areas: "header header header" "sidnev content content" "sidnev anuncios anuncios" "footer footer footer";
+  }
+}
+
+@media (max-width: 760px) {
+  /* mudando o layout do conteudo para ficar responsivo */
+  .estrutura {
+        grid-template-areas: "header header header" "sidnev sidnev sidnev" "content content content" "anuncios anuncios anuncios" "footer footer footer";
+  }
+  /* mudando o layout do Header para ficar responsivo */
+  .header {
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header nav a {
+    font-size: 1.2em;
+  }
+  .header nav li:nth-child(1) {
+    display: none;
+  }
+  .header nav li:nth-child(2) {
+    display: none;
+  }
+  .header nav li:nth-child(3) {
+    display: none;
+  }
+  .header nav li:nth-child(4) {
+    display: block;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+  }
+  .sidenav {
+    /* overflow serve para nao criar uma quebra do layout nesse caso ira criar uma barra de rolagem especifica*/
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    position: relative;
+    padding: 0 30px;
+  }
+  .sidenav:after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    -webkit-animation: seta .5s ease-in 0s infinite alternate;
+            animation: seta .5s ease-in 0s infinite alternate;
+  }
+  .sidenav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .sidenav ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 60px;
+            flex: 1 0 60px;
+  }
+  .sidenav ul li a {
+    margin: 30px 30px 30px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    justify-items: center;
+  }
+  .content img {
+    width: 100%;
+  }
+  .header {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    gap: 0px;
+  }
+  .header img {
+    width: 250px;
+  }
+  .header nav li:nth-child(1) {
+    display: none;
+  }
+  .header nav li:nth-child(2) {
+    display: none;
+  }
+  .header nav li:nth-child(3) {
+    display: none;
+  }
+}
+
+/* @extend usando quando nao a variacaoes no css para nao gerar codigo repetitivo*/
+/* @mixin seria uma funcao para css, onde eu posso passar parametros no seu uso */
+/*# sourceMappingURL=style.css.map */
