@@ -1,0 +1,14 @@
+#sobre{
+    margin: 0 auto;
+    grid-area: sobre;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+    height: 87vh;
+
+    background-color: #E6FFFB;
+}

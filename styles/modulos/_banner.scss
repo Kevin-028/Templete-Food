@@ -1,3 +1,57 @@
-#banner{ 
-    
+#banner{
+    font-family: $font-base;   
+    grid-area: banner;
+    grid-column: 1 /-1 ;
+
+    height: 87vh;
+    background: url(../img/banner/Banner.jpeg) round;
+
+
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+
+    div{
+        justify-self: center;
+
+        max-width: 500px;
+        padding: 5%;
+
+        color:  $banner-font-cor;
+        text-align: center;
+
+        border-radius: 5px;
+        background-color: $banner-div-background;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.735);
+
+        h3{
+            margin-top: 5%;
+            font-size: $banner-h3-size;
+        }
+        button{
+            color: $banner-font-cor;
+
+            margin-top: 5%;
+
+            width: 100%;
+            height: 40px;
+            max-width: 250px;
+
+
+            font-size: 1.3em;
+
+            background: $banner-button-background;
+            border-radius: 5px;
+            border: none;
+
+            &:hover{
+                background: rgb(255, 255, 255);
+                color: rgb(223, 70, 70);
+            }
+            &:active{
+                border: none;
+                margin: none;
+            }
+        }
+    }
 }

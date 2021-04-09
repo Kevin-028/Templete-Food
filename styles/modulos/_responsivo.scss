@@ -18,7 +18,7 @@
             ;
     } */
     /* mudando o layout do Header para ficar responsivo */
-    .header{
+/*     .header{
         grid-template-columns: 3fr 1fr;
         align-items: center;
         nav{
@@ -40,11 +40,11 @@
             }
             
         }
-    };
+    }; */
 
 };
 @media (max-width: 600px){
-    .content{
+ /*    .content{
         grid-template-columns: auto;
         justify-items: center;
         img{
@@ -70,6 +70,6 @@
             }
         }
 
-    }
+    } */
 
 }
