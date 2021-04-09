@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
 @import "modulos/variaveis.scss";
 @import "modulos/html.scss";
-@import "modulos/grid.scss";
-@import "modulos/menu.scss";
 @import "modulos/animacao.scss";
+@import "modulos/grid.scss";
+@import "modulos/header.scss";
+@import "modulos/banner.scss";
+@import "modulos/content.scss";
 @import "modulos/responsivo.scss";
 
 /* @extend usando quando nao a variacaoes no css para nao gerar codigo repetitivo*/

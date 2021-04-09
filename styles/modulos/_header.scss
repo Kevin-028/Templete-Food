@@ -1,0 +1,152 @@
+/*configuracoes do menu */
+.header{
+    font-family: 'Merienda', cursive !important;
+
+    z-index: 9999;
+    position: sticky; 
+    top:0;
+    grid-area: header;
+    /* craiando um gradiente no menu */
+    background: $header-background;
+    padding: $header-tamanho-padding;
+    height: $header-tamanho-menu;
+    /* criando o Grid interno do menu */
+    display: grid;
+    /* definindo a quantidade de colunas do meu menu e tamanho */
+    grid-template-columns: 1fr 2fr 1fr; 
+    justify-items: center;
+    align-items: center;
+    /*  fim do Grid interno do menu */
+    .logo{
+        max-width: $header-tamanho-logo;
+        font-weight: 400;
+    }
+    nav{
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        a{
+            display: block;
+            padding: 10px;
+            color: $header-nav-cor-font;
+            font-size: $header-font-size;
+            background: $header-nav-cor-fundo;
+            border-radius: 5px;
+            transition: 0.1s;
+            &:hover{
+                background: $header-nav-cor-fundo-hover;
+                color: $header-nav-cor-font-hover;
+            }
+        }
+        /* so ira adicionar a margin quando tiver um li apos o outro */
+        li + li{
+            margin-left: 30px;
+        }
+        li:last-child{
+            display: none;
+            transition: all 1s linear;
+        }
+
+    }
+}
+/* configurando o menu de mobile */
+.side-menu-wrapper { /* style menu wrapper */
+	background: rgba(116, 24, 221, 0.942);
+	padding: 40px 0 0 40px;
+	position: fixed; /* Fixed position */
+	top: 0;
+	right: 0; /* Sidebar initial position. "right" for right positioned menu */
+	height: 100%;
+	z-index: 2;
+	transition: 0.5s; /* CSS transition speed */
+	width: 250px;
+	box-sizing: border-box;
+    & > ul{ /* css ul list style */
+        list-style:none;
+        padding:0;
+        margin:0;
+        overflow-y: auto; /* enable scroll for menu items */
+        height:95%;
+        & > li{
+            & > a{/* links */
+                display: block;
+                border-bottom: 1px solid white;
+                padding: 6px 4px 6px 4px;
+                color: #000000;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+        }
+    }
+    & > a.menu-close { /* close button */
+        padding: 8px 0 4px 23px;
+        color: black;
+        display: block;
+        margin: -30px 0 -10px -20px;
+        font-size: 35px;
+        text-decoration: none;
+    }
+}
+.menu-overlay { /* overlay */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.hamburger{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    transition: all .3s linear;
+
+    &::after{
+        content: "";
+        width: 70%;
+        height: 3px;
+        background-color: aliceblue;
+        border-radius: 20px;
+        
+        position: absolute;
+        top: 25%;
+        left:15%;
+        transition: all .3s linear;
+
+    }
+    &::before{
+        content: "";
+        width: 70%;
+        height: 3px;
+        border-radius: 20px;
+        
+        position: absolute;
+        top: 65%;
+        left:15%;
+        background-color: aliceblue;
+        transition: all .3s linear;
+
+
+    }
+}
+
+#hamburger:checked ~ label .hamburger::after, #hamburger1:checked ~ label .hamburger::after{
+    transform: rotate(45deg);
+    top: 45%;
+}
+#hamburger:checked ~ label .hamburger::before, #hamburger1:checked ~ label .hamburger::before{
+    transform: rotate(-45deg);
+    top: 45%;
+}
+#hamburger:checked ~ label .hamburger, #hamburger1:checked ~ label .hamburger{
+    top: 45%;
+}
