@@ -4,12 +4,16 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "figurinha texto"
-
     ;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     .sobre-figurinha{
-        
+        background-color: red;
+
     }
     .sobre-texto{
+        text-align: center;
         background-color: tomato;
         button{
                     @include botoes($banner-button-background,$banner-button-background-hover,$banner-button-font-color);
