@@ -6,17 +6,21 @@
     <meta name="theme-color" content="#000"><!-- muda a cor de alguma coisa no celular -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="styles/style.css">
 
-    <title>Widbeast</title>
+    <title>Food</title>
 </head>
 
 <body>
     <div class="estrutura">
         <header class="header">
-            <a href="#" class="logo"><img src="img/header/logo_header.webp" alt="Logo da sua empresa"></a>
+
+            <a href="#"class="logo" >          
+                <picture href="#banner" >
+                    <source srcset="img/header/logo_header.png">
+                    <img src="img/header/logo_header.webp" alt="Logo da sua empresa">
+                </picture>
+            </a>
             <nav class="btn-menu">
                 <ul>
                     <li><a href="#banner" rel="nofollow">Inicio</a></li>
@@ -55,37 +59,30 @@
             </div>
         </header>
         <!-- a Tag MAIN no HTML representa que esse vai ser o conteudo principal -->
-        <main id="banner">
-            <span>
-            </span>
-            <div>
-                <h1>Lorem ipsum </h1>
-                <h3>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, ipsam excepturi. Cumque, eum maiores vel delectus ex reprehenderit corporis fuga, quos, voluptatem sunt numquam nesciunt quam blanditiis architecto molestiae. Eaque.
-                </h3>
-                <button>Loren ipsum</button>
+        <main class="content">
+            <div id="banner">
+                <span>
+                </span>
+                <div>
+                    <h1>Lorem ipsum </h1>
+                    <h3>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, ipsam excepturi. Cumque, eum maiores vel delectus ex reprehenderit corporis fuga, quos, voluptatem sunt numquam nesciunt quam blanditiis architecto molestiae. Eaque.
+                    </h3>
+                    <button>Loren ipsum</button>
+                </div>
+                <span>
+                    
+                </span>
             </div>
-            <span>
-                
-            </span>
-
-        </main>
-        <main id="sobre">
-            <div>
-                <picture>
-                    <img src="/img/sobre/carrinho.svg" alt="">
-                </picture>
-            
-            </div>
-            <div>
-                <button>Loren ipsum</button>
-                <p>
-                    Lorem ipsum <span>dolor sit amet </span> consectetur,
-                    adipisicing elit. Dolorum, obcaecati in perferendis quisquam 
-                    tenetur laborum, modi eum ea nobis officia harum reiciendis earum 
-                    eligendi nihil quidem? Dignissimos voluptate earum aliquam?
-                </p>
-
+            <div id="sobre">
+                <div class="sobre-figurinha"> 
+                    <div class="lazy-img">
+                        <img src="" data-url="./img/sobre/carrinho.svg" alt="">
+                    </div>
+                </div>
+                <div class="sobre-texto">
+                    <button>loren loren</button>
+                </div>
             </div>
         </main>
 
@@ -111,6 +108,8 @@
     </section> -->
     <script src="js/jquery.js"></script>
     <script src="js/java.js"></script>
+    <script src="js/lazyload.js"></script>
+
 </body>
 
 </html>

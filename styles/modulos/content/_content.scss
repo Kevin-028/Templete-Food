@@ -1,0 +1,14 @@
+
+.content{
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "banner" 
+        "sobre"
+    ;
+
+    /* define que o item no grid vai ser com todas as colunas */
+    
+}

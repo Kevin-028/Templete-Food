@@ -45,15 +45,15 @@ img {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      grid-template-areas: "header " "banner" "sobre" "footer";
+      grid-template-areas: "header " "content" "footer";
 }
 
 /* Inicio das configuracoes da footer */
 .footer {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
-  background: linear-gradient(135deg, #E6FFFB, #f5f5f5);
+  background: linear-gradient(135deg, tomato, red);
 }
 
 .footer p {
@@ -61,6 +61,12 @@ img {
   color: #000;
   text-align: center;
   padding: 30px;
+}
+
+.footer:hover {
+  background-color: transparent !important;
+  -webkit-transition: opacity 5s !important;
+  transition: opacity 5s !important;
 }
 
 /* fim das configuracoes da footer */
@@ -252,9 +258,21 @@ img {
   top: 45%;
 }
 
+.content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "banner"  "sobre";
+  /* define que o item no grid vai ser com todas as colunas */
+}
+
 #banner {
   font-family: "Merienda", cursive !important;
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: banner;
   grid-column: 1 /-1;
@@ -289,9 +307,10 @@ img {
 
 #banner div button {
   color: white;
+  padding: 20px;
   margin-top: 5%;
   width: 100%;
-  height: 40px;
+  height: 10%;
   max-width: 250px;
   font-size: 1.3em;
   background: -webkit-gradient(linear, left top, left bottom, from(#F57E0B), to(#ED3634));
@@ -301,175 +320,62 @@ img {
 }
 
 #banner div button:hover {
-  background: white;
-  color: #df4646;
+  background: -webkit-gradient(linear, left bottom, left top, from(#F57E0B), to(#ED3634));
+  background: linear-gradient(0deg, #F57E0B, #ED3634);
+  color: white;
 }
 
-#banner div button:active {
-  border: none;
-  margin: none;
+#banner div button:focus {
+  outline: none;
 }
 
 #sobre {
-  margin: 0 auto;
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: sobre;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 87vh;
-  background-color: #E6FFFB;
-}
-
-.content {
-  grid-area: content;
-  max-width: 900px;
-  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  /* define que o item no grid vai ser com todas as colunas */
-  /* inicio stylos */
-  /* titulo */
-  /* caracteristicas */
-  /* testos em destaque */
-  /*   fim stylos  */
+      grid-template-areas: "figurinha texto";
 }
 
-.content .col-wide {
-  grid-column: 1 / -1;
+#sobre .sobre-texto {
+  background-color: tomato;
 }
 
-.content img {
+#sobre .sobre-texto button {
+  color: white;
+  padding: 20px;
+  margin-top: 5%;
   width: 100%;
-}
-
-.content .img-1 {
-  grid-row: span 2;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.content .img-2 {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.content p {
-  font-size: 1.2em;
-  font-weight: 1.6;
-  letter-spacing: -0.005em;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.content .informacoes p + p {
-  margin-top: 30px;
-}
-
-.content .titulo {
-  color: #B07DFB;
-}
-
-.content .titulo h1 {
-  font-size: 3.75em;
-  line-height: 1;
-  font-weight: 700;
-}
-
-.content .titulo span {
-  font-size: 0.875em;
-  font-style: italic;
-}
-
-.content .caracteristicas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.content .caracteristicas span {
-  display: block;
-  color: #B07DFB;
-}
-
-.content .caracteristicas > div {
-  width: 80px;
-  text-align: center;
-  background: linear-gradient(135deg, #E6FFFB, #f5f5f5);
-  border-radius: 6px;
-  -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
-          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.324);
-  position: relative;
-}
-
-.content .caracteristicas > div:first-child {
-  margin-right: 30px;
-}
-
-.content .caracteristicas .numero {
-  font-size: 3em;
-  line-height: 1;
-  margin-top: 10px auto;
-}
-
-.content .caracteristicas .rotulo {
-  background-color: white;
-  border-radius: 0 0 5px 5px;
-  padding: 5px 0;
-  position: relative;
-  top: 2px;
-}
-
-.content .citacao, .content .atributos {
-  padding: 30px;
-  border-radius: 5px;
-  -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
-          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
-  background: linear-gradient(135deg, #E6FFFB, #f5f5f5);
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-}
-
-.content .citacao p {
+  height: 10%;
+  max-width: 250px;
   font-size: 1.3em;
-  font-style: italic;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F57E0B), to(#ED3634));
+  background: linear-gradient(180deg, #F57E0B, #ED3634);
+  border-radius: 5px;
+  border: none;
+}
+
+#sobre .sobre-texto button:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#F57E0B), to(#ED3634));
+  background: linear-gradient(0deg, #F57E0B, #ED3634);
   color: white;
-  max-width: 500px;
-  margin: 0 auto;
 }
 
-.content .atributos li {
-  color: white;
-  font-family: Courier, monospace;
-  font-size: 1em;
-  padding: 15px;
+#sobre .sobre-texto button:focus {
+  outline: none;
 }
 
-.content .atributos li + li {
-  border-top: 2px solid #B07DFB;
+.lazy-img img {
+  opacity: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.content .destaque {
-  font-size: 0.875em;
-  color: #B07DFB;
-  max-width: 16em;
+.lazy-img img.loaded {
+  opacity: 1;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
 }
 
 @media (max-width: 1200px) {
@@ -509,7 +415,7 @@ img {
             li:nth-child(3){
                 display: none;
             }
-            li:nth-child(4){
+            li:last-child{
                 display: block;
                 transition: all 1s linear;
             }

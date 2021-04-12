@@ -1,3 +1,4 @@
+
 #banner{
     font-family: $font-base;   
     grid-area: banner;
@@ -29,29 +30,7 @@
             font-size: $banner-h3-size;
         }
         button{
-            color: $banner-font-cor;
-
-            margin-top: 5%;
-
-            width: 100%;
-            height: 40px;
-            max-width: 250px;
-
-
-            font-size: 1.3em;
-
-            background: $banner-button-background;
-            border-radius: 5px;
-            border: none;
-
-            &:hover{
-                background: rgb(255, 255, 255);
-                color: rgb(223, 70, 70);
-            }
-            &:active{
-                border: none;
-                margin: none;
-            }
+            @include botoes($banner-button-background,$banner-button-background-hover,$banner-button-font-color);
         }
     }
 }

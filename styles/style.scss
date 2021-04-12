@@ -4,9 +4,9 @@
 @import "modulos/animacao.scss";
 @import "modulos/grid.scss";
 @import "modulos/header.scss";
-@import "modulos/banner.scss";
-@import "modulos/sobre.scss";
-@import "modulos/content.scss";
+@import "modulos/content/content.scss";
+@import "modulos/content/banner.scss";
+@import "modulos/content/sobre.scss";
 @import "modulos/responsivo.scss";
 
 /* @extend usando quando nao a variacaoes no css para nao gerar codigo repetitivo*/

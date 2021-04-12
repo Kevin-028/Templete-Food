@@ -75,3 +75,4 @@ $('.side-menu-wrapper ul li a[href^="#"]').on('click', function(e) {
 	$('#hamburger').prop('checked', false);
 	$('#hamburger1').prop('checked', false);
 });
+
