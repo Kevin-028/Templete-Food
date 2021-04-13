@@ -30,7 +30,7 @@
             font-size: $banner-h3-size;
         }
         button{
-            @include botoes($banner-button-background,$banner-button-background-hover,$banner-button-font-color);
+            @include botoes($banner-button-background,$banner-button-background-hover,$banner-button-font-color, $banner-button-margin-botton);
         }
     }
 }

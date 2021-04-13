@@ -1,0 +1,44 @@
+#especialidade{
+    li{
+        list-style: none;
+    }
+
+    background-color: black;
+    font-family: $font-base-texto;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  85vh 85vh ;
+    grid-template-areas:
+        "video menus"
+        "menus2 secao4"
+    ;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    .video{
+        grid-area: video;
+        video{
+            max-height: 84vh;
+            p{
+                color: red;
+                font-size: 1.5em;
+            }
+        }
+    }
+    .menu{
+        @include texto-sobre(1, 1);
+
+    }
+    .secao4{
+        grid-area: secao4;
+        min-height: 87vh;
+
+        img{
+            margin-top: 20%;
+            height: 60vh;
+        }
+    }
+    .menu2{
+        @include texto-sobre(2, 2);
+    }
+}

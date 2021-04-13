@@ -7,10 +7,6 @@
 }
 
 /* tirando a bolinha dos itens de lista */
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
 }
@@ -95,6 +91,10 @@ img {
       -ms-flex-align: center;
           align-items: center;
   /*  fim do Grid interno do menu */
+}
+
+.header li {
+  list-style: none;
 }
 
 .header .logo {
@@ -266,7 +266,7 @@ img {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      grid-template-areas: "banner"  "sobre";
+      grid-template-areas: "banner"  "sobre" "especialidade";
   /* define que o item no grid vai ser com todas as colunas */
 }
 
@@ -309,6 +309,7 @@ img {
   color: white;
   padding: 20px;
   margin-top: 5%;
+  margin-bottom: none;
   width: 100%;
   height: 10%;
   max-width: 250px;
@@ -330,12 +331,13 @@ img {
 }
 
 #sobre {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   height: 87vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "figurinha texto";
+      grid-template-areas: "texto figurinha";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -346,18 +348,28 @@ img {
 }
 
 #sobre .sobre-figurinha {
-  background-color: red;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: figurinha;
+}
+
+#sobre .sobre-figurinha div.lazy-img img {
+  max-height: 85vh;
 }
 
 #sobre .sobre-texto {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: texto;
   text-align: center;
-  background-color: tomato;
+  padding-left: 10%;
 }
 
 #sobre .sobre-texto button {
   color: white;
   padding: 20px;
   margin-top: 5%;
+  margin-bottom: 10%;
   width: 100%;
   height: 10%;
   max-width: 250px;
@@ -378,16 +390,137 @@ img {
   outline: none;
 }
 
+#sobre .sobre-texto span {
+  color: red;
+  font-size: 1.2em;
+}
+
 .lazy-img img {
   opacity: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .lazy-img img.loaded {
   opacity: 1;
   -webkit-transition: opacity 2s;
   transition: opacity 2s;
+}
+
+#especialidade {
+  background-color: black;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 85vh 85vh;
+      grid-template-rows: 85vh 85vh;
+      grid-template-areas: "video menus" "menus2 secao4";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#especialidade li {
+  list-style: none;
+}
+
+#especialidade .video {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: video;
+}
+
+#especialidade .video video {
+  max-height: 84vh;
+}
+
+#especialidade .video video p {
+  color: red;
+  font-size: 1.5em;
+}
+
+#especialidade .menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menus;
+  padding-right: 10%;
+  width: 70%;
+  font-family: "Merienda", cursive !important;
+  text-align: center;
+  color: white;
+}
+
+#especialidade .menu h2 {
+  padding-bottom: 5%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+#especialidade .menu span {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  width: 15%;
+}
+
+#especialidade .menu span ul li {
+  list-style-type: white square;
+}
+
+#especialidade .menu span ul + ul {
+  margin-left: 103%;
+}
+
+#especialidade .secao4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: secao4;
+  min-height: 87vh;
+}
+
+#especialidade .secao4 img {
+  margin-top: 20%;
+  height: 60vh;
+}
+
+#especialidade .menu2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: menus2;
+  padding-left: 10%;
+  width: 70%;
+  font-family: "Merienda", cursive !important;
+  text-align: center;
+  color: white;
+}
+
+#especialidade .menu2 h2 {
+  padding-bottom: 5%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+#especialidade .menu2 span {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  width: 15%;
+}
+
+#especialidade .menu2 span ul li {
+  list-style-type: white square;
+}
+
+#especialidade .menu2 span ul + ul {
+  margin-left: 103%;
 }
 
 @media (max-width: 1200px) {

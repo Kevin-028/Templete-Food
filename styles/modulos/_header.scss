@@ -1,5 +1,9 @@
 /*configuracoes do menu */
 .header{
+    li{
+        list-style: none;
+    }
+
     font-family: 'Merienda', cursive !important;
 
     z-index: 9999;

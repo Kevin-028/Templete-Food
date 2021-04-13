@@ -3,9 +3,6 @@
     margin: 0;
 }
 /* tirando a bolinha dos itens de lista */
-li{
-    list-style: none;
-}
 a{
     text-decoration: none;
 }
@@ -17,12 +14,13 @@ img{
 }
 
 // deve ser bassado a cod do background promeiro depois o hover, e por ultimo a cor da font
-@mixin botoes($background, $background-hover, $font-color) {
+@mixin botoes($background, $background-hover, $font-color, $botton) {
     color: $font-color;
 
     padding: 20px;
 
     margin-top: 5%;
+    margin-bottom: $botton;
 
     width: 100%;
     height: 10% ;
@@ -43,3 +41,42 @@ img{
         outline: none;            
     };
 };
+
+//1 igual a menus, 2 == a secao4
+@mixin texto-sobre ($area,$posicao ) {
+
+    @if $area == 1{
+        grid-area: menus;
+
+    }@else{
+        grid-area: menus2;
+    };
+
+    @if $posicao == 1{
+        padding-right: 10%;
+    } @else{
+        padding-left: 10%;
+
+    };
+    width: 70%;
+    font-family: $font-base;
+    text-align: center;
+    color: white;
+    h2{
+        padding-bottom: 5%;
+        margin-bottom: 10px;
+        border-bottom:  2px solid white; 
+    }
+    span{
+        font-family: $font-base-texto;
+        display: flex;
+        text-align: center;
+        width: 15%;
+        ul li{
+            list-style-type:white square ; 
+        }
+        ul + ul{
+            margin-left: 103%;
+        }
+    }
+}
