@@ -1,0 +1,14 @@
+.footer{
+    grid-area: footer;
+    background: $footer-background;
+    p{
+        font-size: $footer-font-size;
+        color: $footer-font-cor;
+        text-align: center;
+        padding: 30px;
+    }
+    &:hover{
+        background-color: transparent !important;
+        transition: opacity 5s !important;
+    }
+}

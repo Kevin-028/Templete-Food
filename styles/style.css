@@ -45,26 +45,6 @@ img {
 }
 
 /* Inicio das configuracoes da footer */
-.footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: footer;
-  background: linear-gradient(135deg, tomato, red);
-}
-
-.footer p {
-  font-size: 1.125em;
-  color: #000;
-  text-align: center;
-  padding: 30px;
-}
-
-.footer:hover {
-  background-color: transparent !important;
-  -webkit-transition: opacity 5s !important;
-  transition: opacity 5s !important;
-}
-
 /* fim das configuracoes da footer */
 /*configuracoes do menu */
 .header {
@@ -528,6 +508,7 @@ img {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: secao5;
+  text-align: center;
 }
 
 #especialidade .secao5 div img {
@@ -559,6 +540,12 @@ img {
 
 #horario {
   font-family: "Merienda", cursive !important;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 87vh;
+      grid-template-rows: 87vh;
 }
 
 @media (max-width: 1200px) {
