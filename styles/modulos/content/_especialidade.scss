@@ -7,10 +7,11 @@
     font-family: $font-base-texto;    
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:  85vh 85vh ;
+    grid-template-rows:  85vh 85vh 85vh;
     grid-template-areas:
         "video menus"
         "menus2 secao4"
+        "secao5 secao5"
     ;
     justify-content: center;
     justify-items: center;
@@ -40,5 +41,17 @@
     }
     .menu2{
         @include texto-sobre(2, 2);
+    }
+
+    .secao5{
+        grid-area: secao5;
+        div{
+            img{
+                max-width: 90vh;
+            }
+            button{
+                @include botoes(red,tomato, white,0px);
+            }
+        }
     }
 }
