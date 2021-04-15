@@ -1,0 +1,92 @@
+@mixin botoes($background, $background-hover, $font-color, $botton) {
+    color: $font-color;
+
+    padding: 20px;
+
+    margin-top: 5%;
+    margin-bottom: $botton;
+
+    width: 100%;
+    height: 10% ;
+    max-width: 250px;
+
+
+    font-size: 1.3em;
+
+    background: $background;
+    border-radius: 5px;
+    border: none;
+
+    &:hover{
+        background: $background-hover;
+        color: $font-color;
+    }
+    &:focus{
+        outline: none;            
+    };
+};
+
+//1 igual a menus, 2 == a secao4
+@mixin texto-sobre ($area,$posicao ) {
+
+    @if $area == 1{
+        grid-area: secao1;
+
+    }@else{
+        grid-area: secao3;
+    };
+
+    @if $posicao == 1{
+        padding-right: 10%;
+    } @else{
+        padding-left: 10%;
+
+    };
+
+    width: 70%;
+    font-family: $font-base;
+    text-align: center;
+    color: white;
+    h2{
+        padding-bottom: 5%;
+        margin-bottom: 10px;
+        border-bottom:  2px solid white; 
+    }
+    div{
+        font-family: $font-base-texto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
+        ul li{
+
+            list-style-type:white square ; 
+            font-size: 1.3em;
+        }
+
+    }
+}
+@mixin texto-sobre-celular {
+    width: 70%;
+    font-family: $font-base;
+    text-align: center;
+    color: white;
+    h2{
+        padding-bottom: 5%;
+        margin-bottom: 10px;
+        border-bottom:  2px solid white; 
+    }
+    div{
+        font-family: $font-base-texto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
+        ul li{
+
+            list-style-type:white square ; 
+            font-size: 1.3em;
+        }
+
+    }
+}

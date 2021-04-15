@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
 @import "modulos/variaveis.scss";
+@import "modulos/mixins/mixins.scss";
 @import "modulos/html.scss";
 @import "modulos/animacao.scss";
 @import "modulos/grid.scss";
-@import "modulos/header.scss";
+@import "modulos/header/header.scss";
 @import "modulos/content/content.scss";
 @import "modulos/content/banner.scss";
 @import "modulos/content/sobre.scss";
 @import "modulos/content/especialidade.scss";
 @import "modulos/footer/footer.scss";
 @import "modulos/responsivo.scss";
-
-/* @extend usando quando nao a variacaoes no css para nao gerar codigo repetitivo*/
-/* @mixin seria uma funcao para css, onde eu posso passar parametros no seu uso */
