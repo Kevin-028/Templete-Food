@@ -76,3 +76,12 @@ $('.side-menu-wrapper ul li a[href^="#"]').on('click', function(e) {
 	$('#hamburger1').prop('checked', false);
 });
 
+
+$(window).on('load', function() {
+	/*------------------
+		Preloder
+	--------------------*/
+	$(".loader").fadeOut(); 
+	$("#preloder").delay(400).fadeOut("slow");
+
+});
