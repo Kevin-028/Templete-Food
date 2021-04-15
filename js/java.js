@@ -49,7 +49,7 @@ $('.btn-menu ul li a[href^="#"]').on('click', function(e) {
 			targetOffset = $(id).offset().top;
 			
 	$('html, body').animate({ 
-		scrollTop: targetOffset - 92 // define a altura que meu scroll vai ficar do top da pagina
+		scrollTop: targetOffset - 90 // define a altura que meu scroll vai ficar do top da pagina
 	}, 500);
 
 });

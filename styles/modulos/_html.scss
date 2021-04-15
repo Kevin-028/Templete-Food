@@ -12,6 +12,28 @@ img{
     max-width: 100%;
     border-radius: 10px;
 }
+li{
+    list-style: none;
+}
+.lazy-img img{
+    opacity: 0;
+}
+
+.lazy-img img.loaded{
+    opacity: 1;
+    transition: opacity 2s;
+    margin: 0 auto;
+}
+
+
+#whats{
+    position: fixed;
+    height: 65px;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    padding: 10px
+}
 
 // deve ser bassado a cod do background promeiro depois o hover, e por ultimo a cor da font
 @mixin botoes($background, $background-hover, $font-color, $botton) {
@@ -46,10 +68,10 @@ img{
 @mixin texto-sobre ($area,$posicao ) {
 
     @if $area == 1{
-        grid-area: menus;
+        grid-area: secao1;
 
     }@else{
-        grid-area: menus2;
+        grid-area: secao3;
     };
 
     @if $posicao == 1{
@@ -58,6 +80,7 @@ img{
         padding-left: 10%;
 
     };
+
     width: 70%;
     font-family: $font-base;
     text-align: center;
@@ -67,16 +90,42 @@ img{
         margin-bottom: 10px;
         border-bottom:  2px solid white; 
     }
-    span{
+    div{
         font-family: $font-base-texto;
-        display: flex;
-        text-align: center;
-        width: 15%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
         ul li{
+
             list-style-type:white square ; 
+            font-size: 1.3em;
         }
-        ul + ul{
-            margin-left: 103%;
-        }
+
     }
 }
+@mixin texto-sobre-celular {
+    width: 70%;
+    font-family: $font-base;
+    text-align: center;
+    color: white;
+    h2{
+        padding-bottom: 5%;
+        margin-bottom: 10px;
+        border-bottom:  2px solid white; 
+    }
+    div{
+        font-family: $font-base-texto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
+        ul li{
+
+            list-style-type:white square ; 
+            font-size: 1.3em;
+        }
+
+    }
+}
+

@@ -1,15 +1,14 @@
 /*configuracoes do menu */
 .header{
-    li{
-        list-style: none;
-    }
+    grid-area: header;
+
+    position: sticky; 
+    top:0;
 
     font-family: 'Merienda', cursive !important;
 
     z-index: 9999;
-    position: sticky; 
-    top:0;
-    grid-area: header;
+
     /* craiando um gradiente no menu */
     background: $header-background;
     padding: $header-tamanho-padding;
@@ -17,16 +16,23 @@
     /* criando o Grid interno do menu */
     display: grid;
     /* definindo a quantidade de colunas do meu menu e tamanho */
-    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "logo menu"; 
     justify-items: center;
     align-items: center;
     /*  fim do Grid interno do menu */
+
+    li{
+        list-style: none;
+    }
+
     .logo{
+        grid-area: logo;
         max-width: $header-tamanho-logo;
         font-weight: 400;
     }
     nav{
-
+        grid-area: menu;
         ul{
             display: flex;
             flex-wrap: wrap;
@@ -57,18 +63,25 @@
 }
 /* configurando o menu de mobile */
 .side-menu-wrapper { /* style menu wrapper */
-	background: rgba(116, 24, 221, 0.942);
-	padding: 40px 0 0 40px;
-	position: fixed; /* Fixed position */
-	top: 0;
+    display: none;
+
+    position: fixed; /* Fixed position */
+    top: 0;
 	right: 0; /* Sidebar initial position. "right" for right positioned menu */
-	height: 100%;
-	z-index: 2;
-	transition: 0.5s; /* CSS transition speed */
+
+	padding: 40px 40px 0 40px;
 	width: 250px;
+	height: 100%;
+
+
+	background: rgba(50, 50, 50, 0.981);
+	transition: 0.5s; /* CSS transition speed */
+
 	box-sizing: border-box;
+
+    z-index: 999;
+    
     & > ul{ /* css ul list style */
-        list-style:none;
         padding:0;
         margin:0;
         overflow-y: auto; /* enable scroll for menu items */
@@ -78,7 +91,7 @@
                 display: block;
                 border-bottom: 1px solid white;
                 padding: 6px 4px 6px 4px;
-                color: #000000;
+                color: white; // cor da letra do menu
                 transition: 0.3s;
                 text-decoration: none;
             }
@@ -97,7 +110,7 @@
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 998;
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,.7);
@@ -138,9 +151,8 @@
         left:15%;
         background-color: aliceblue;
         transition: all .3s linear;
-
-
     }
+
 }
 
 #hamburger:checked ~ label .hamburger::after, #hamburger1:checked ~ label .hamburger::after{
