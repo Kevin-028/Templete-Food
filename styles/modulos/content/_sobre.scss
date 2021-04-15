@@ -9,8 +9,10 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
+
     .sobre-figurinha{
         grid-area: figurinha;
+
         div.lazy-img{
             img{
                 max-height: 85vh;
@@ -30,18 +32,10 @@
             color: red;
             font-size: 1.2em;
         }
+        h2{
+            font-family: $font-base;
+            margin-bottom: 10%;
+        }
     }
   
 };
-
-
-
-.lazy-img img{
-    opacity: 0;
-
-}
-
-.lazy-img img.loaded{
-    opacity: 1;
-    transition: opacity 2s;
-}

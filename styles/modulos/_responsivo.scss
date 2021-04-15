@@ -1,75 +1,61 @@
-@media (max-width: 1200px){
-    /* mudando o layout do conteudo para ficar responsivo */
-/*     .estrutura{
-        grid-template-areas: 
-            "header header header"
-            "content content content"
-            "footer footer footer"
-        ;
-    }; */
-};
-@media (max-width: 760px){
-    /* mudando o layout do conteudo para ficar responsivo */
-   /*  .estrutura{
-        grid-template-areas:
-            "header header header"
-            "content content content"
-            "footer footer footer"
-            ;
-    } */
-    /* mudando o layout do Header para ficar responsivo */
-/*     .header{
-        grid-template-columns: 3fr 1fr;
-        align-items: center;
+@media (max-width: 825px){
+    .header{
+
         nav{
-            a{
-                font-size: 1.2em;
-            }
-            li:nth-child(1){
-                display: none;
-            }
-            li:nth-child(2){
-                display: none;
-            }
-            li:nth-child(3){
+            justify-self: end;
+            margin-right: 15px;
+            li:nth-child(1), li:nth-child(2),li:nth-child(3),li:nth-child(4){
                 display: none;
             }
             li:last-child{
                 display: block;
                 transition: all 1s linear;
             }
-            
-        }
-    }; */
-
-};
-@media (max-width: 600px){
- /*    .content{
-        grid-template-columns: auto;
-        justify-items: center;
-        img{
-            width: 100%;
+            a{
+                background-color: black;
+                &:hover{
+                    background-color: black;
+                }
+            }
         }
     }
-    .header{
-        grid-template-columns: 2fr 1fr;
-        justify-items: center;
-        gap: 0px;
-        img{
-            width: 250px;
+
+};
+
+
+@media (max-width: 700px){
+ 
+    #especialidade{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "titulo"
+        "secao1 secao1"
+        "secao2 secao2"
+        "secao3 secao4"
+        "secao5 secao5"
+    ;
+    gap: 0px;
+        .secao2{
+            video{
+                max-height: 450px;
+            }
         }
-        nav{
-            li:nth-child(1){
-                display: none;
-            }
-            li:nth-child(2){
-                display: none;
-            }
-            li:nth-child(3){
-                display: none;
+    }
+    .footer{
+
+        .descricao{
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "logo social social"
+            "contato contato contato";
+
+            div.contato{
+                font-size: 0.6em;
             }
         }
 
-    } */
+    }
 
 }

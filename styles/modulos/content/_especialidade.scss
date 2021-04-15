@@ -1,23 +1,33 @@
 #especialidade{
-    li{
-        list-style: none;
-    }
 
     background-color: black;
     font-family: $font-base-texto;    
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:  85vh 85vh 85vh;
+    grid-template-rows: 1fr  minmax(450px,76vh) minmax(450px,76vh) minmax(450px,76vh);
     grid-template-areas:
-        "video menus"
-        "menus2 secao4"
+        "titulo titulo"
+        "secao2 secao1"
+        "secao3 secao4"
         "secao5 secao5"
     ;
     justify-content: center;
     justify-items: center;
     align-items: center;
-    .video{
-        grid-area: video;
+
+    padding-top: 3%;
+    .titulo{
+        font-family: $font-base;
+        color: white;
+        grid-area: titulo;
+
+    }
+
+    .secao1{
+        @include texto-sobre(1, 1);
+    }
+    .secao2{
+        grid-area: secao2;
         video{
             max-height: 84vh;
             p{
@@ -26,9 +36,8 @@
             }
         }
     }
-    .menu{
-        @include texto-sobre(1, 1);
-
+    .secao3{
+        @include texto-sobre(2, 2);
     }
     .secao4{
         grid-area: secao4;
@@ -39,19 +48,20 @@
             height: 60vh;
         }
     }
-    .menu2{
-        @include texto-sobre(2, 2);
-    }
-
     .secao5{
         grid-area: secao5;
         text-align: center;
         div{
-            img{
-                max-width: 90vh;
-            }
-            button{
-                @include botoes(red,tomato, white,0px);
+            width: 80%;
+            margin: 0 auto;
+            div.lazy-img{
+            
+                img{
+                    width: 70%;
+                }
+                button{
+                    @include botoes(red,tomato, white,0px);
+                }
             }
         }
     }

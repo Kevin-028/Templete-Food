@@ -17,6 +17,30 @@ img {
   border-radius: 10px;
 }
 
+li {
+  list-style: none;
+}
+
+.lazy-img img {
+  opacity: 0;
+}
+
+.lazy-img img.loaded {
+  opacity: 1;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  margin: 0 auto;
+}
+
+#whats {
+  position: fixed;
+  height: 65px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  padding: 10px;
+}
+
 @-webkit-keyframes seta {
   from {
     right: 30px;
@@ -44,18 +68,16 @@ img {
       grid-template-areas: "header " "content" "footer";
 }
 
-/* Inicio das configuracoes da footer */
-/* fim das configuracoes da footer */
 /*configuracoes do menu */
 .header {
-  font-family: 'Merienda', cursive !important;
-  z-index: 9999;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-family: 'Merienda', cursive !important;
+  z-index: 9999;
   /* craiando um gradiente no menu */
   background: #f5f5f5;
   padding: 5px;
@@ -64,8 +86,9 @@ img {
   display: -ms-grid;
   display: grid;
   /* definindo a quantidade de colunas do meu menu e tamanho */
-  -ms-grid-columns: 1fr 2fr 1fr;
-      grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: "logo menu";
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -78,11 +101,17 @@ img {
 }
 
 .header .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
   max-width: 24vh;
   font-weight: 400;
 }
 
 .header nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menu;
   /* so ira adicionar a margin quando tiver um li apos o outro */
 }
 
@@ -97,7 +126,7 @@ img {
 .header nav a {
   display: block;
   padding: 10px;
-  color: #181414;
+  color: black;
   font-size: 1.125em;
   background: none;
   border-radius: 5px;
@@ -106,7 +135,7 @@ img {
 }
 
 .header nav a:hover {
-  background: #ffff8c;
+  background: none;
   color: red;
 }
 
@@ -123,26 +152,26 @@ img {
 /* configurando o menu de mobile */
 .side-menu-wrapper {
   /* style menu wrapper */
-  background: rgba(116, 24, 221, 0.942);
-  padding: 40px 0 0 40px;
+  display: none;
   position: fixed;
   /* Fixed position */
   top: 0;
   right: 0;
   /* Sidebar initial position. "right" for right positioned menu */
+  padding: 40px 40px 0 40px;
+  width: 250px;
   height: 100%;
-  z-index: 2;
+  background: rgba(50, 50, 50, 0.981);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   /* CSS transition speed */
-  width: 250px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 999;
 }
 
 .side-menu-wrapper > ul {
   /* css ul list style */
-  list-style: none;
   padding: 0;
   margin: 0;
   overflow-y: auto;
@@ -155,7 +184,7 @@ img {
   display: block;
   border-bottom: 1px solid white;
   padding: 6px 4px 6px 4px;
-  color: #000000;
+  color: white;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
@@ -176,7 +205,7 @@ img {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 998;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
@@ -375,14 +404,9 @@ img {
   font-size: 1.2em;
 }
 
-.lazy-img img {
-  opacity: 0;
-}
-
-.lazy-img img.loaded {
-  opacity: 1;
-  -webkit-transition: opacity 2s;
-  transition: opacity 2s;
+#sobre .sobre-texto h2 {
+  font-family: "Merienda", cursive !important;
+  margin-bottom: 10%;
 }
 
 #especialidade {
@@ -392,9 +416,9 @@ img {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 85vh 85vh 85vh;
-      grid-template-rows: 85vh 85vh 85vh;
-      grid-template-areas: "video menus" "menus2 secao4" "secao5 secao5";
+  -ms-grid-rows: 1fr minmax(450px, 76vh) minmax(450px, 76vh) minmax(450px, 76vh);
+      grid-template-rows: 1fr minmax(450px, 76vh) minmax(450px, 76vh) minmax(450px, 76vh);
+      grid-template-areas: "titulo titulo" "secao2 secao1" "secao3 secao4" "secao5 secao5";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -402,31 +426,22 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 3%;
 }
 
-#especialidade li {
-  list-style: none;
-}
-
-#especialidade .video {
+#especialidade .titulo {
+  font-family: "Merienda", cursive !important;
+  color: white;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: video;
+  -ms-grid-column-span: 2;
+  grid-area: titulo;
 }
 
-#especialidade .video video {
-  max-height: 84vh;
-}
-
-#especialidade .video video p {
-  color: red;
-  font-size: 1.5em;
-}
-
-#especialidade .menu {
-  -ms-grid-row: 1;
+#especialidade .secao1 {
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
-  grid-area: menus;
+  grid-area: secao1;
   padding-right: 10%;
   width: 70%;
   font-family: "Merienda", cursive !important;
@@ -434,31 +449,72 @@ img {
   color: white;
 }
 
-#especialidade .menu h2 {
+#especialidade .secao1 h2 {
   padding-bottom: 5%;
   margin-bottom: 10px;
   border-bottom: 2px solid white;
 }
 
-#especialidade .menu span {
+#especialidade .secao1 div {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  width: 15%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
-#especialidade .menu span ul li {
+#especialidade .secao1 div ul li {
   list-style-type: white square;
+  font-size: 1.3em;
 }
 
-#especialidade .menu span ul + ul {
-  margin-left: 103%;
+#especialidade .secao2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: secao2;
+}
+
+#especialidade .secao2 video {
+  max-height: 84vh;
+}
+
+#especialidade .secao2 video p {
+  color: red;
+  font-size: 1.5em;
+}
+
+#especialidade .secao3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: secao3;
+  padding-left: 10%;
+  width: 70%;
+  font-family: "Merienda", cursive !important;
+  text-align: center;
+  color: white;
+}
+
+#especialidade .secao3 h2 {
+  padding-bottom: 5%;
+  margin-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+#especialidade .secao3 div {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#especialidade .secao3 div ul li {
+  list-style-type: white square;
+  font-size: 1.3em;
 }
 
 #especialidade .secao4 {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: secao4;
   min-height: 87vh;
@@ -469,53 +525,24 @@ img {
   height: 60vh;
 }
 
-#especialidade .menu2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: menus2;
-  padding-left: 10%;
-  width: 70%;
-  font-family: "Merienda", cursive !important;
-  text-align: center;
-  color: white;
-}
-
-#especialidade .menu2 h2 {
-  padding-bottom: 5%;
-  margin-bottom: 10px;
-  border-bottom: 2px solid white;
-}
-
-#especialidade .menu2 span {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  width: 15%;
-}
-
-#especialidade .menu2 span ul li {
-  list-style-type: white square;
-}
-
-#especialidade .menu2 span ul + ul {
-  margin-left: 103%;
-}
-
 #especialidade .secao5 {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: secao5;
   text-align: center;
 }
 
-#especialidade .secao5 div img {
-  max-width: 90vh;
+#especialidade .secao5 div {
+  width: 80%;
+  margin: 0 auto;
 }
 
-#especialidade .secao5 div button {
+#especialidade .secao5 div div.lazy-img img {
+  width: 70%;
+}
+
+#especialidade .secao5 div div.lazy-img button {
   color: white;
   padding: 20px;
   margin-top: 5%;
@@ -529,99 +556,201 @@ img {
   border: none;
 }
 
-#especialidade .secao5 div button:hover {
+#especialidade .secao5 div div.lazy-img button:hover {
   background: tomato;
   color: white;
 }
 
-#especialidade .secao5 div button:focus {
+#especialidade .secao5 div div.lazy-img button:focus {
   outline: none;
 }
 
-#horario {
-  font-family: "Merienda", cursive !important;
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#101010), to(#101010));
+  background: linear-gradient(180deg, #000, #101010, #101010);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 87vh;
-      grid-template-rows: 87vh;
+      grid-template-areas: "mapa" "descricao" "copyright";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: minmax(2fr, 10vh) 500px 1fr;
+      grid-template-rows: minmax(2fr, 10vh) 500px 1fr;
+  font-family: "Merienda", cursive !important;
+  color: white;
+  padding-top: 1%;
+  gap: 10px;
 }
 
-@media (max-width: 1200px) {
-  /* mudando o layout do conteudo para ficar responsivo */
-  /*     .estrutura{
-        grid-template-areas: 
-            "header header header"
-            "content content content"
-            "footer footer footer"
-        ;
-    }; */
+.footer div.mapa {
+  width: 80%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: mapa;
+  margin: 0 auto;
+  text-align: center;
 }
 
-@media (max-width: 760px) {
-  /* mudando o layout do conteudo para ficar responsivo */
-  /*  .estrutura{
-        grid-template-areas:
-            "header header header"
-            "content content content"
-            "footer footer footer"
-            ;
-    } */
-  /* mudando o layout do Header para ficar responsivo */
-  /*     .header{
-        grid-template-columns: 3fr 1fr;
-        align-items: center;
-        nav{
-            a{
-                font-size: 1.2em;
-            }
-            li:nth-child(1){
-                display: none;
-            }
-            li:nth-child(2){
-                display: none;
-            }
-            li:nth-child(3){
-                display: none;
-            }
-            li:last-child{
-                display: block;
-                transition: all 1s linear;
-            }
-            
-        }
-    }; */
+.footer div.mapa h3 {
+  font-size: 1.3em;
 }
 
-@media (max-width: 600px) {
-  /*    .content{
-        grid-template-columns: auto;
-        justify-items: center;
-        img{
-            width: 100%;
-        }
-    }
-    .header{
-        grid-template-columns: 2fr 1fr;
-        justify-items: center;
-        gap: 0px;
-        img{
-            width: 250px;
-        }
-        nav{
-            li:nth-child(1){
-                display: none;
-            }
-            li:nth-child(2){
-                display: none;
-            }
-            li:nth-child(3){
-                display: none;
-            }
-        }
+.footer div.mapa p {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
 
-    } */
+.footer div.mapa iframe {
+  width: 83%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.footer .descricao {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: descricao;
+  width: 80%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "logo contato social";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .descricao div.logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.footer .descricao div.logo a div img {
+  height: 10vh;
+}
+
+.footer .descricao div.contato {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: contato;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.footer .descricao div.contato p + p {
+  margin-top: 5px;
+}
+
+.footer .descricao div.contato a {
+  color: white;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.footer .descricao div.contato a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.footer .descricao div.social {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: social;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .descricao div.social a img {
+  width: 25px;
+  padding: 5px;
+}
+
+.footer .descricao div.social a:hover {
+  cursor: pointer;
+}
+
+.footer .descricao div.social a + a {
+  margin-left: 10px;
+}
+
+.footer div.copyright {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: copyright;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding-bottom: 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.footer div.copyright :last-child {
+  margin-top: 5px;
+  font-size: 0.7em;
+}
+
+.footer div.copyright :last-child a {
+  font-size: 1.2em;
+  color: white;
+}
+
+.footer div.copyright :last-child a:hover {
+  color: magenta;
+}
+
+@media (max-width: 825px) {
+  .header nav {
+    -ms-grid-column-align: end;
+        justify-self: end;
+    margin-right: 15px;
+  }
+  .header nav li:nth-child(1), .header nav li:nth-child(2), .header nav li:nth-child(3), .header nav li:nth-child(4) {
+    display: none;
+  }
+  .header nav li:last-child {
+    display: block;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+  }
+  .header nav a {
+    background-color: black;
+  }
+  .header nav a:hover {
+    background-color: black;
+  }
+}
+
+@media (max-width: 700px) {
+  #especialidade {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "titulo" "secao1 secao1" "secao2 secao2" "secao3 secao4" "secao5 secao5";
+    gap: 0px;
+  }
+  #especialidade .secao2 video {
+    max-height: 450px;
+  }
+  .footer .descricao {
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo social social" "contato contato contato";
+  }
+  .footer .descricao div.contato {
+    font-size: 0.6em;
+  }
 }
 
 /* @extend usando quando nao a variacaoes no css para nao gerar codigo repetitivo*/
