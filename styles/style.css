@@ -352,7 +352,7 @@ li {
   grid-area: banner;
   grid-column: 1 /-1;
   height: 87vh;
-  background: url(../img/banner/Banner.jpeg) round;
+  background: url(../img/banner/Banner1.jpg) round;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 4fr 1fr;
