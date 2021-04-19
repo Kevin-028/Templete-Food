@@ -540,13 +540,8 @@ li {
   grid-area: secao2;
 }
 
-#especialidade .secao2 video {
+#especialidade .secao2 div img {
   max-height: 84vh;
-}
-
-#especialidade .secao2 video p {
-  color: red;
-  font-size: 1.5em;
 }
 
 #especialidade .secao3 {

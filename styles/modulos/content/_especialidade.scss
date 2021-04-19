@@ -28,11 +28,10 @@
     }
     .secao2{
         grid-area: secao2;
-        video{
-            max-height: 84vh;
-            p{
-                color: red;
-                font-size: 1.5em;
+        div{
+            img{
+                max-height: 84vh;
+
             }
         }
     }
