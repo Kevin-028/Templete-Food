@@ -608,7 +608,7 @@ li {
 }
 
 #especialidade .secao5 div {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -875,7 +875,7 @@ li {
     margin: 0 auto;
   }
   #especialidade .secao5 div div.lazy-img img {
-    width: 70%;
+    width: 90%;
   }
   #especialidade .secao5 div div.lazy-img button {
     color: white;

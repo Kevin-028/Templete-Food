@@ -115,7 +115,8 @@
                 div.lazy-img{
                 
                     img{
-                        width: 70%;
+                        width: 90%;
+                        min-width: 340px;
                     }
                     button{
                         @include botoes(red,tomato, white,0px);
