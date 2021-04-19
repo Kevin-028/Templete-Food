@@ -818,4 +818,10 @@ li {
     font-size: 0.6em;
   }
 }
+
+@media (max-width: 500px) {
+  #banner {
+    background: url(../img/banner/hambuzinho.jpg) round;
+  }
+}
 /*# sourceMappingURL=style.css.map */
