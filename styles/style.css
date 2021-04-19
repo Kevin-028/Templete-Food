@@ -540,8 +540,8 @@ li {
   grid-area: secao2;
 }
 
-#especialidade .secao2 div img {
-  max-height: 84vh;
+#especialidade .secao2 img {
+  width: 90%;
 }
 
 #especialidade .secao3 {
