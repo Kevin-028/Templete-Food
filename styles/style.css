@@ -407,12 +407,13 @@ li {
 
 #sobre {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  height: 87vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "texto figurinha";
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "titulo figurinha" "texto figurinha";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -424,6 +425,7 @@ li {
 
 #sobre .sobre-figurinha {
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: figurinha;
 }
@@ -433,11 +435,14 @@ li {
 }
 
 #sobre .sobre-texto {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: texto;
   text-align: center;
-  padding-left: 10%;
+  padding: 0% 10%;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
 
 #sobre .sobre-texto button {
@@ -470,9 +475,15 @@ li {
   font-size: 1.2em;
 }
 
-#sobre .sobre-texto h2 {
+#sobre .titulo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: titulo;
   font-family: "Merienda", cursive !important;
-  margin-bottom: 10%;
+  -ms-flex-item-align: end;
+      align-self: end;
+  padding-bottom: 5%;
 }
 
 #especialidade {
@@ -516,6 +527,7 @@ li {
 }
 
 #especialidade .secao1 h2 {
+  font-size: 1.2em;
   padding-bottom: 5%;
   margin-bottom: 10px;
   border-bottom: 2px solid white;
@@ -556,6 +568,7 @@ li {
 }
 
 #especialidade .secao3 h2 {
+  font-size: 1.2em;
   padding-bottom: 5%;
   margin-bottom: 10px;
   border-bottom: 2px solid white;
@@ -578,7 +591,7 @@ li {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: secao4;
-  min-height: 87vh;
+  height: 87vh;
 }
 
 #especialidade .secao4 img {
@@ -791,16 +804,98 @@ li {
 }
 
 @media (max-width: 700px) {
+  #sobre {
+    -ms-grid-rows: 80px 1fr 250px;
+        grid-template-rows: 80px 1fr 250px;
+        grid-template-areas: "titulo titulo" "figurinha figurinha" "texto texto";
+    font-size: 0.9em;
+    gap: 0px;
+  }
+  #sobre .sobre-figurinha div.lazy-img img {
+    max-height: 90%;
+    max-height: 350px;
+  }
+  #sobre .sobre-texto {
+    padding: 0% 5%;
+    font-size: 1em;
+  }
+  #sobre .sobre-texto h2 {
+    font-family: "Merienda", cursive !important;
+    margin-bottom: 2%;
+  }
   #especialidade {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "titulo" "secao1 secao1" "secao2 secao2" "secao3 secao4" "secao5 secao5";
-    gap: 0px;
+        grid-template-areas: "titulo titulo" "secao1 secao1" "secao2 secao2" "secao3 secao3" "secao4 secao4" "secao5 secao5";
+    gap: 5px;
   }
-  #especialidade .secao2 video {
-    max-height: 450px;
+  #especialidade .secao1 {
+    padding: 0px;
+  }
+  #especialidade .secao1 h2 {
+    padding: 3%;
+    margin: 1.5%;
+  }
+  #especialidade .secao1 div {
+    margin-bottom: 2%;
+  }
+  #especialidade .secao1 div ul li {
+    font-size: 0.9em;
+  }
+  #especialidade .secao2 {
+    max-width: 80%;
+    min-width: 300px;
+  }
+  #especialidade .secao3 {
+    padding: 0px;
+  }
+  #especialidade .secao3 h2 {
+    padding: 3%;
+    margin: 1.5%;
+  }
+  #especialidade .secao3 div {
+    margin-bottom: 2%;
+  }
+  #especialidade .secao3 div ul li {
+    font-size: 0.9em;
+  }
+  #especialidade .secao4 {
+    height: 100%;
+  }
+  #especialidade .secao4 img {
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
+  #especialidade .secao5 div {
+    width: 100%;
+    min-width: 300px;
+    min-width: none;
+    margin: 0 auto;
+  }
+  #especialidade .secao5 div div.lazy-img img {
+    width: 70%;
+  }
+  #especialidade .secao5 div div.lazy-img button {
+    color: white;
+    padding: 20px;
+    margin-top: 5%;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 10%;
+    max-width: 250px;
+    font-size: 1.3em;
+    background: red;
+    border-radius: 5px;
+    border: none;
+  }
+  #especialidade .secao5 div div.lazy-img button:hover {
+    background: tomato;
+    color: white;
+  }
+  #especialidade .secao5 div div.lazy-img button:focus {
+    outline: none;
   }
   .footer .descricao {
     -ms-grid-rows: 1fr 1fr;

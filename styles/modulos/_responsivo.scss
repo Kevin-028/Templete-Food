@@ -24,26 +24,107 @@
 
 
 @media (max-width: 700px){
- 
+    #sobre{
+        grid-template-rows: 80px 1fr 250px;
+        grid-template-areas:
+        "titulo titulo"
+        "figurinha figurinha"
+        "texto texto"
 
+        ;
+        font-size: 0.9em;
+        gap: 0px;
+        .sobre-figurinha{
+            div.lazy-img{
+                img{
+                    max-height: 90%;
+                    max-height: 350px;
+                }
+            }
+        }
+        .sobre-texto{
+            padding: 0% 5%;
+           font-size: 1em;
+            h2{
+                font-family: $font-base;
+                margin-bottom: 2%;
+            }
 
+        }
+    }
     #especialidade{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:
-        "titulo"
+        "titulo titulo"
         "secao1 secao1"
         "secao2 secao2"
-        "secao3 secao4"
+        "secao3 secao3"
+        "secao4 secao4"
         "secao5 secao5"
     ;
-    gap: 0px;
+        gap: 5px;
+        .secao1{
+            padding: 0px;
+
+            h2{
+                padding: 3%;
+                margin: 1.5%;
+            }
+            div{
+                margin-bottom: 2%;
+                ul li{
+                    font-size: 0.9em;
+                }
+
+            }
+        }
         .secao2{
-            video{
-                max-height: 450px;
+            max-width: 80%;
+            min-width: 300px;
+        }
+        .secao3{
+            padding: 0px;
+
+            h2{
+                padding: 3%;
+                margin: 1.5%;
+            }
+            div{
+                margin-bottom: 2%;
+                ul li{
+                    font-size: 0.9em;
+                }
+
+            }
+        }
+        .secao4{
+            height: 100%;
+            img{
+                margin-top: 0px;
+                margin-bottom: 50px;
+            }
+        }
+        .secao5{
+            div{
+                width: 100%;
+                min-width: 300px;
+
+                min-width: none;
+                margin: 0 auto;
+                div.lazy-img{
+                
+                    img{
+                        width: 70%;
+                    }
+                    button{
+                        @include botoes(red,tomato, white,0px);
+                    }
+                }
             }
         }
     }
+
     .footer{
 
         .descricao{
@@ -62,7 +143,6 @@
 
 }
 @media (max-width: 500px){
-
     #banner{
         background: url(../img/banner/hambuzinho.jpg) round;
     }

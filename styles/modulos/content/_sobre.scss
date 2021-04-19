@@ -1,9 +1,10 @@
 #sobre{
     font-family: $font-base-texto;
-    height: 87vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
+        "titulo figurinha"
         "texto figurinha"
     ;
     justify-content: center;
@@ -22,7 +23,9 @@
     .sobre-texto{
         grid-area: texto;
         text-align: center;
-        padding-left: 10%;
+        padding: 0% 10%;
+
+        align-self: start;
         button{
             
             @include botoes($banner-button-background,$banner-button-background-hover,$banner-button-font-color, $sobre-button-margin-botton);
@@ -32,10 +35,13 @@
             color: red;
             font-size: 1.2em;
         }
-        h2{
-            font-family: $font-base;
-            margin-bottom: 10%;
-        }
     }
+    .titulo{
+        grid-area: titulo;
+        font-family: $font-base;
+        align-self: end;
+        padding-bottom : 5%;
+    };
+    
   
 };
